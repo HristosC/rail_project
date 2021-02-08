@@ -9,7 +9,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-
+  config.hosts << "8000-af0a0545-8cd2-4a63-bf60-42f7410a8e70.ws-eu03.gitpod.io"
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
 
