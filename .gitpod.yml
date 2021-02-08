@@ -1,0 +1,6 @@
+ports:
+  - port: 8000 
+    visibility: public
+    onOpen: open-preview
+tasks:
+  - init: bundle install
