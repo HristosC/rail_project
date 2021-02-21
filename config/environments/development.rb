@@ -8,7 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-  config.hosts << "8000-black-dormouse-x657xn7h.ws-eu03.gitpod.io"
+  config.hosts << "8000-black-dormouse-x657xn7h.ws-eu03.gitpod.io/"
   # Show full error reports.
   config.consider_all_requests_local = true
 

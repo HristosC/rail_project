@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe 'Logout' do
   # Authentication test suite
-  describe 'POST /auth/logout' do
+  describe 'GET /auth/logout' do
     # create test user
     let!(:user) { create(:user) }
     # set headers for authorization
@@ -51,7 +51,7 @@ RSpec.describe 'Logout' do
 
         post '/signup',params: valid_params, headers: headers 
         salt_record =  Salt.where(user_id: user.id).take
-        msg2 = post '/auth/logout', params: {Authorization: salt_record.token}.to_json, headers: headers
+        msg2 = get '/auth/logout', params: {Authorization: salt_record.token}.to_json, headers: headers
 
       }
 
@@ -66,7 +66,7 @@ RSpec.describe 'Logout' do
     context 'When request is invalid' do
       before { 
 
-        msg3 = post '/auth/logout', params: {Authorization: nil}.to_json, headers: headers 
+        msg3 = get '/auth/logout', params: {Authorization: nil}.to_json, headers: headers 
         }
       it 'returns a failure message' do
 
